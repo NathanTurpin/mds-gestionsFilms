@@ -7,6 +7,16 @@ const Acteurs = require("./Acteurs")(sequelize, DataTypes);
 
 Films.hasMany(Avis);
 Avis.belongsTo(Films);
+const films_acteurs = sequelize.define(
+  "films_acteurs",
+  {
+    ids: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+    },
+  },
+  { timestamps: false }
+);
 Films.belongsToMany(Acteurs, { through: "films_acteurs" });
 Acteurs.belongsToMany(Films, { through: "films_acteurs" });
 

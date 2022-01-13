@@ -2,7 +2,7 @@ function Films(sequelize, datatypes) {
   return sequelize.define("films", {
     title: {
       type: datatypes.STRING,
-      allowNull: true, // CHAMP REQUIS
+      allowNull: false, // CHAMP REQUIS
     },
     synopsis: {
       type: datatypes.STRING,
